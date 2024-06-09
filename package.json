@@ -4,7 +4,7 @@
   "description": "Descripción de tu aplicación",
   "main": "api/servidorbckn.js",
   "scripts": {
-    "start": "node api/servidorbckn.js"
+    "start": "node api/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
