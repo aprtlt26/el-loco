@@ -1,0 +1,13 @@
+{
+  "name": "arte y psique",
+  "version": "1.0.0",
+  "description": "Descripción de tu aplicación",
+  "main": "api/servidorbckn.js",
+  "scripts": {
+    "start": "node api/servidorbckn.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
+  }
+}

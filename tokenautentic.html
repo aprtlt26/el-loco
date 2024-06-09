@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Acceso</title>
+</head>
+<body>
+    <h1>Verificación de Acceso</h1>
+    <div id="statusMessage"></div>
+
+    <script>
+        async function verifyToken(token) {
+            const response = await fetch('/verify-token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success) {
+                    window.location.href = 'https://arteypsique.com/lematworld.html/verificacion?token=tarot?rc4Q=zuG?0x6o-OjeaZrzFO34gp73EAmgl?0pST0HO=oFAKdNYAbTS?A9KjTtgNSkZDTHHSX5/VnmOc6PcDGiYfnPd0vz?O0ddERwfywE5Pzl1q1yB4eATfDU65f4tjlhttyGPu5j8D9JWYCaaZ/HYjihjc2VV=gSIsgEqjTH5rOKqH7hT5g3c!LaLFckIHPCo?eGG1TcMIRoNKFyPB1NzAjAnmnf5eJV-i6CxmMHVZzU0XuZlB-M3mLjB
+';
+                } else {
+                    document.getElementById('statusMessage').innerText = 'Token inválido o expirado';
+                }
+            } else {
+                document.getElementById('statusMessage').innerText = 'Error al verificar el token';
+            }
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        if (token) {
+            verifyToken(token);
+        } else {
+            document.getElementById('statusMessage').innerText = 'Token no proporcionado';
+        }
+    </script>
+</body>
+</html>
