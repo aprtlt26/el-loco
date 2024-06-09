@@ -2,7 +2,7 @@
   "name": "arte y psique",
   "version": "1.0.0",
   "description": "Descripción de tu aplicación",
-  "main": "api/servidorbckn.js",
+  "main": "api/server.js",
   "scripts": {
     "start": "node api/server.js"
   },
