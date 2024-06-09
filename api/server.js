@@ -29,7 +29,7 @@ app.get('/verificacion', (req, res) => {
 
 // Servir la página protegida
 app.get('/plataforma-protegida', (req, res) => {
-    res.sendFile(path.join(__dirname, 'plataforma-protegida.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
